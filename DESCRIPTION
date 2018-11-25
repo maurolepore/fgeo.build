@@ -1,0 +1,35 @@
+Package: fgeo.build
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    c(person(given = "Mauro",
+             family = "Lepore",
+             role = c("aut", "ctr", "cre"),
+             email = "leporem@si.edu"),
+      person(given = "CTFS-ForestGEO",
+             role = "cph",
+             email = "ForestGEO@si.edu"))
+Description: What the package does (one paragraph).
+License: GPL-3
+Depends: 
+    R (>= 3.2)
+Imports: 
+    devtools,
+    fgeo,
+    fgeo.install,
+    fs,
+    glue,
+    magrittr,
+    pkgbuild,
+    purrr,
+    tibble,
+    tidyr,
+    withr
+Suggests: 
+    testthat
+Remotes: 
+    forestgeo/fgeo
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1

@@ -4,7 +4,7 @@
 \alias{check_built_packages}
 \title{Check multiple built source-packages.}
 \usage{
-check_built_packages(pkgs = fgeo.install::fgeo_source())
+check_built_packages(pkgs = install_src_pkgs())
 }
 \arguments{
 \item{pkgs}{Character vector: The paths to built source-packages to

@@ -18,7 +18,7 @@
 #' out <- check_built_packages()
 #' out
 #' }
-check_built_packages <- function(pkgs = fgeo.install::fgeo_source()) {
+check_built_packages <- function(pkgs = install_src_pkgs()) {
   is_source_package <- all(grepl("[.]tar[.]gz", pkgs))
   if (!is_source_package) {
     stop("All `pkgs` must have extension .tar.gz", call. = FALSE)
@@ -37,3 +37,5 @@ check_built_packages <- function(pkgs = fgeo.install::fgeo_source()) {
 
   results
 }
+
+install_src_pkgs <- function() list.files(install_src(), full.names = TRUE)

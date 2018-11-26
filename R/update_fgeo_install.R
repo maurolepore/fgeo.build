@@ -6,7 +6,8 @@
 #' @examples
 #' \dontrun{
 #' update_fgeo_install()
-#' check_built_packages()
+#' out <- check_built_packages()
+#' cat(out$value, sep = "\n\n")
 #' }
 update_fgeo_install <- function() {
   source_file("fgeo_packages")
@@ -24,14 +25,17 @@ update_fgeo_install <- function() {
 #' @export
 #'
 #' @examples
-#' # Defaults
-#' pkgs <- fgeo::fgeo()
-#' src <- fgeo.install::path_source()
+#' if (requireNamespace("fgeo")) {
+#'   # Defaults
+#'   pkgs <- fgeo::fgeo_pkgs()
+#'   src <- fgeo.install:::path_source()
+#' }
+#'
 #' \dontrun{
 #' update_fgeo_source(pkgs, src)
 #' }
-update_fgeo_source <- function(pkgs = fgeo::fgeo(),
-                               src = fgeo.install::path_source()) {
+update_fgeo_source <- function(pkgs = fgeo::fgeo_pkgs(),
+                               src = install_src()) {
   urls <- glue("forestgeo/{pkgs}")
 
   if (dir_exists(src)) dir_delete(src)
@@ -39,6 +43,8 @@ update_fgeo_source <- function(pkgs = fgeo::fgeo(),
   dir_create(src)
   build_github(urls, src)
 }
+
+install_src <- function() "../fgeo.install/inst/extdata/source"
 
 #' Update vector to schedule package installation in correct order.
 #'

@@ -19,7 +19,6 @@ Update vector to schedule package installation in correct order.
 }
 \examples{
 \dontrun{
-source_file("scheduled_packages")
-source_file("fgeo_packages")
+source_file("data-internal")
 }
 }

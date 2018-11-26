@@ -10,10 +10,9 @@
 #' cat(out$value, sep = "\n\n")
 #' }
 update_fgeo_install <- function() {
-  source_file("fgeo_packages")
-  source_file("cran_packages")
+  source_file("data-internal")
   update_fgeo_source()
-  source_file("scheduled_packages")
+  source_file("data-internal")
 }
 
 #' Build fgeo source-packages from github into a local directory.
@@ -56,8 +55,7 @@ install_src <- function() "../fgeo.install/inst/extdata/source"
 #'
 #' @examples
 #' \dontrun{
-#' source_file("scheduled_packages")
-#' source_file("fgeo_packages")
+#' source_file("data-internal")
 #' }
 source_file <- function(file, dir = "../fgeo.install") {
   withr::with_dir(
